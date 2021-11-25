@@ -11,9 +11,11 @@
         function cancelCallback() {
             console.log('Payment cancelled');
         }
+        let urlParams = new URLSearchParams(window.location.search);
+        let session_ID = urlParams.get('session')
         Checkout.configure({
             session: {
-                id: 'SESSION0002458634479H14650886E4'
+                id: session_ID
             },
             interaction: {
                 displayControl: { // you may change these settings as you prefer
